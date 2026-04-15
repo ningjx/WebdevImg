@@ -2,10 +2,7 @@
  * Cloudflare Worker - Image Hosting for PicGo/PicList
  * 兼容 PicGo/PicList 上传接口，将图片存储到 WebDAV
  * 
- * 使用方法：
- * 1. 在 Cloudflare Dashboard 创建 Worker
- * 2. 将此代码粘贴到编辑器
- * 3. 设置环境变量（Settings > Variables and Secrets）：
+ *    设置环境变量（Settings > Variables and Secrets）：
  *    - WEBDAV_URL: WebDAV 服务器地址（文件将直接存储在此路径下）
  *    - WEBDAV_USERNAME: 用户名
  *    - WEBDAV_PASSWORD: 密码
