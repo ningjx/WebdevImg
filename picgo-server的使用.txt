@@ -1,0 +1,35 @@
+picgo-server的使用
+picgo-server命令用于启动web服务，接收来自其他应用或其他主机的HTTP请求来上传图片。
+
+默认监听地址：0.0.0.0，默认监听端口：36677
+
+接口鉴权
+当将接口暴露于公网时，为了防止恶意上传，可以使用接口鉴权功能。通过在运行picgo-server时添加-k或--key参数来设置一个密钥。
+
+发送请求时添加URL查询参数key即可，例如：http://xxx:36677/upload?key=xxx。
+
+表单上传
+请求方法: POST
+url: http://127.0.0.1:36677/upload （此处以默认配置为例）
+请求body: multipart/form-data格式，key任选，value为图片文件
+HTTP调用上传剪贴板图片
+请求方法: POST
+url: http://127.0.0.1:36677/upload （此处以默认配置为例）
+请求body: {list: ['xxx.jpg']} 必须是JSON格式
+Tip: PicList支持通过设置picbed和configName两个URL查询参数来指定上传图床和配置文件。例如：http://127.0.0.1:36677/upload?picbed=aws-s3&configName=piclist-test 该配置将会使用aws-s3图床，并且使用piclist-test配置文件。
+返回的数据：
+
+{
+  "success": true, // or false
+  "result": ["url"]
+}
+HTTP调用上传具体路径图片
+method: POST
+url: http://127.0.0.1:36677/upload （此处以默认配置为例）
+request body: {list: ['xxx.jpg']} 必须是JSON格式
+返回的数据：
+
+{
+  "success": true, // or false
+  "result": ["url"]
+}
