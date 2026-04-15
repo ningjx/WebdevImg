@@ -1,0 +1,12 @@
+name = "pic-storage"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# 环境变量在 Cloudflare Dashboard 中配置：
+# Settings > Variables and Secrets
+# - WEBDAV_URL: WebDAV 服务器地址
+# - WEBDAV_USERNAME: 用户名
+# - WEBDAV_PASSWORD: 密码
+# - UPLOAD_TOKEN: 上传验证 token（可选）
+# - CUSTOM_DOMAIN: 自定义域名（可选）
+# - ALLOWED_DOMAINS: 允许访问的域名列表（可选）
